@@ -3,6 +3,8 @@
   "version": false,
   "dependencies": {},
   "ambientDependencies": {
-    "node": "registry:dt/node#4.0.0+20160412142033"
+    "node": "registry:dt/node#4.0.0+20160412142033",
+    "phantom": "registry:dt/phantom#0.7.0+20160316155526",
+    "q": "registry:dt/q#0.0.0+20160417152954"
   }
 }

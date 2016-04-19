@@ -4,7 +4,9 @@
   "description": "",
   "main": "media-gen.js",
   "dependencies": {
+    "mkdirp": "^0.5.1",
     "phantom": "^2.0.10",
+    "q": "^1.4.1",
     "tslint": "^3.7.4",
     "typings": "^0.7.12"
   },
