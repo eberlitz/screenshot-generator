@@ -1,0 +1,22 @@
+{
+  "name": "screenshot-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "media-gen.js",
+  "dependencies": {
+    "phantom": "^2.0.10",
+    "tslint": "^3.7.4",
+    "typings": "^0.7.12"
+  },
+  "devDependencies": {
+    "tslint": "^3.7.4",
+    "typings": "^0.7.12"
+  },
+  "scripts": {
+    "typings": "typings",
+    "postinstall": "typings install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
