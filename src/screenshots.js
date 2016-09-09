@@ -5,8 +5,8 @@ var path = require('path');
 var mkdirp = require('mkdirp');
 var config = {
     pages: [{
-            "url": "http://www.google.com",
-            "name": "google"
+            "url": "http://localhost:8100/",
+            "name": "login"
         }],
     screenshots: [
         { width: 750, height: 1334 },
@@ -52,8 +52,8 @@ function generateImg(url, width, height, devicePixelRatio, savePath, saveFilenam
                     if (devicePixelRatio && devicePixelRatio !== 1) {
                         p = evaluate(page, function (devicePixelRatio) {
                             document.body.style.webkitTransform = "scale(" + devicePixelRatio + ")";
-                            document.body.style.webkitTransformOrigin = "0% 0%";
-                            document.body.style.width = (100 / devicePixelRatio) + "%";
+                            // document.body.style.webkitTransformOrigin = "0% 0%";
+                            // document.body.style.width = (100 / devicePixelRatio) + "%";
                         }, devicePixelRatio);
                     }
                     return p.then(function () {
@@ -61,11 +61,13 @@ function generateImg(url, width, height, devicePixelRatio, savePath, saveFilenam
                         mkdirp(savePath, function (err) {
                             if (err)
                                 deferred.reject(err);
-                            page.render(path.join(savePath, saveFilename), { format: 'png', quality: '100' }).then(function () {
-                                console.log("Generated screenshot", url, savePath, saveFilename);
-                                deferred.resolve();
-                                page.close();
-                            });
+                            setTimeout(function () {
+                                page.render(path.join(savePath, saveFilename), { format: 'png', quality: '100' }).then(function () {
+                                    console.log("Generated screenshot", url, savePath, saveFilename);
+                                    deferred.resolve();
+                                    page.close();
+                                });
+                            }, 3000);
                         });
                         return deferred.promise;
                     });
@@ -88,6 +90,7 @@ function generate(config) {
         });
     }, q.when())
         .then(function () {
+        console.log('All done');
         if (ph) {
             ph.exit();
             ph = null;
