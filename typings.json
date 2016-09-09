@@ -1,10 +1,9 @@
 {
   "name": "screenshot-generator",
-  "version": false,
   "dependencies": {},
-  "ambientDependencies": {
-    "node": "registry:dt/node#4.0.0+20160412142033",
+  "globalDevDependencies": {
+    "node": "registry:dt/node#6.0.0+20160909174046",
     "phantom": "registry:dt/phantom#0.7.0+20160316155526",
-    "q": "registry:dt/q#0.0.0+20160417152954"
+    "q": "registry:dt/q#0.0.0+20160613154756"
   }
 }
